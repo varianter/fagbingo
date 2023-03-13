@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css";
+import BingoSquare from "./components/BingoSquare";
+import BingoPrize from "./components/BingoPrize";
+import inputValues from "./Data/inputValues.json";
+import prizeValues from "./Data/prizeValues.json";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section>
+        <h1>Fagbingo #1</h1>
+        <p>Desember - Mars 2023</p>
+      </section>
+
+      <section className="container">
+        {inputValues.map((value) => (
+          <BingoSquare task={value} key={value} />
+        ))}
+      </section>
     </div>
   );
 }
